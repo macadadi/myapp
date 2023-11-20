@@ -3,7 +3,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Getting Started
 
 First, clone the repo
-
+```bash
+git clone git@github.com:macadadi/myapp.git
+```
 second install dependencies
 ```bash
 npm run install
