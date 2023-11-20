@@ -8,7 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const StyledForm = () => {
     const [selectedOption, setSelectedOption] = useState();
-    const { register, handleSubmit, trigger, formState: { errors, isValid }, clearErrors, control, watch } = useForm({
+    const { register, handleSubmit, trigger, formState: { errors, isValid, isSubmitting }, clearErrors, control, watch } = useForm({
         mode: 'onChange', defaultValues: {
             dateOfBirth: new Date('2003-01-01'),
         }
@@ -160,9 +160,9 @@ const StyledForm = () => {
                     <button
                         type="submit"
                         className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300 disabled:bg-blue-200"
-                        disabled={Object.keys(errors).length > 0 || !selectedOption || !isValid}
+                        disabled={Object.keys(errors).length > 0 || !selectedOption || !isValid || isSubmitting}
                     >
-                        Submit
+                       {isSubmitting ? 'Submitting' :'Submit'} 
                     </button>
                 </div>
             </form>
