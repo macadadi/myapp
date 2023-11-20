@@ -68,7 +68,7 @@ const StyledForm = () => {
                     </select>
                 </div>
                 <div className="mb-2 mx-1">
-                    <label htmlFor="national id" className="block text-gray-700 font-bold mb-2">National ID</label>
+                    <label htmlFor="nationalID" className="block text-gray-700 font-bold mb-2">National ID</label>
                     <input
                         type="number"
                         id="nationalID"
@@ -136,7 +136,7 @@ const StyledForm = () => {
                     {errors.dateOfBirth && <span className="text-red-500">{errors.dateOfBirth.message}</span>}
                 </div>
                 {(selectedOption === "Student" || selectedOption === "Teacher") && <div className="mb-2 mx-1">
-                    <label htmlFor="role" className="block text-gray-700 font-bold mb-2">{selectedOption} number</label>
+                    <label  className="block text-gray-700 font-bold mb-2">{selectedOption} number</label>
                     <input
                         type="text"
                         id={selectedOption}
@@ -147,7 +147,7 @@ const StyledForm = () => {
                     {errors.Student && selectedOption === "Student" && <span className="text-red-500">{errors.Student.message}</span>}
                 </div>}
                 {selectedOption === "Teacher" && <div className="mb-2 mx-1">
-                    <label htmlFor="national id" className="block text-gray-700 font-bold mb-2">Salary</label>
+                    <label htmlFor="salary" className="block text-gray-700 font-bold mb-2">Salary</label>
                     <input
                         type="text"
                         id="salary"

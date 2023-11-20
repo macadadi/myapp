@@ -28,7 +28,7 @@ function page() {
                 </thead>
                 <tbody>
                     {data?.map((row, index) => (
-                        <tr key={row.id} className={index % 2 === 0 ? 'bg-gray-100  hover:bg-blue-200' : 'bg-white hover:bg-blue-200'}>
+                        <tr key={index} className={index % 2 === 0 ? 'bg-gray-100  hover:bg-blue-200' : 'bg-white hover:bg-blue-200'}>
                             <td className="py-2 px-4 border-b">{row.name}</td>
                             <td className="py-2 px-4 border-b">{row.title}</td>
                             <td className="py-2 px-4 border-b">{row.surname}</td>
@@ -50,10 +50,11 @@ const fetcher = async () => {
     try {
         const dataResponse = await mockFetch('/api', { method: 'GET' });
         const data = await dataResponse.json();
-      const filtered = data.filter(data=> data.hasOwnProperty('title'))
+      const filtered = data ? data.filter(data=> data.hasOwnProperty('title')) :[]
         return filtered
     } catch (error) {
         console.log('Teachers:', error)
         throw error
     }
 }
+
